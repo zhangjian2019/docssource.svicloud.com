@@ -22,11 +22,7 @@ name: 平台安装
 
 </br></br>
 
-<center>
 
-![image](https://note.youdao.com/yws/public/resource/5f8b148a9d2b2da52ee5c6ef41e87a57/xmlnote/C67F705740224D70A48CF408A459AF35/244)
-
-</center>
 
 <center>
 
