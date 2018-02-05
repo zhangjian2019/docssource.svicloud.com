@@ -10,6 +10,14 @@ name: 安装准备
 
 # 支持 BBR，请升级内核至 4.9 以上版本（弱网环境建议）
 > 如果要支持 aufs，请安装 linux-image-extra 的包
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+
+>保存生效
+sysctl -p
+
+>验证
+lsmod | grep bbr
 
 # 所有服务器设置外部 DNS
 ```bash
