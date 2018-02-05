@@ -18,11 +18,11 @@ apt-cache search linux-image-extra
 
 **安装最新的内核**
 
-apt-get install linux-image-extra-<NEWEST_KERNEL_RELEASE>
+apt-get install linux-image-extra-NEWEST_KERNEL_RELEASE
 
 dpkg -l | grep linux-image
 
-apt-get remove <OLD_KERNEL_RELEASE>
+apt-get remove OLD_KERNEL_RELEASE
 
 update-grub
 
@@ -30,7 +30,7 @@ reboot
 
 **查看一下目前的内核版本**
 
-应该是显示为 <NEWEST_KERNEL_RELEASE>
+应该是显示为 NEWEST_KERNEL_RELEASE
 
 uname -r
 
