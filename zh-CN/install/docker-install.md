@@ -5,8 +5,13 @@ name: Docker 安装
 # 安装 Docker
 
 ```bash
+# 国内 DaoCloud 镜像安装
+curl -sSL https://get.daocloud.io/docker | sh
 # clone 后直接脚本安装
 git clone https://github.com/rancher/install-docker.git
+cd ./install-docker && bash <LATEST__XX>.sh
+Docker 开机自启动
+systemctl  enable docker.service
 ```
 
 # 检查
@@ -40,6 +45,8 @@ vi /etc/docker/daemon.json
      "http://hub-mirror.c.163.com"
   ]
 }
+配置加速后要重启或reload
+service docker reload
 ```
 
 # 配置 Docker 代理（用于国内无法访问国外某些网站的 https）
