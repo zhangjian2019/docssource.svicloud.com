@@ -11,26 +11,27 @@ Ubuntu 16.04.3 LTS \n \l
 Ubuntu 升级内核（如最新，可跳过）：
 
 **直接使用 apt-get 安装内核**
-
+```bash
 apt-get update
 
 apt-cache search linux-image-extra
 
 **安装最新的内核**
 
-apt-get install linux-image-extra-NEWEST_KERNEL_RELEASE
+apt-get install linux-image-extra-<NEWEST_KERNEL_RELEASE>
 
 dpkg -l | grep linux-image
 
-apt-get remove OLD_KERNEL_RELEASE
+apt-get remove <OLD_KERNEL_RELEASE>
 
 update-grub
 
 reboot
+```
 
 **查看一下目前的内核版本**
 
-应该是显示为 NEWEST_KERNEL_RELEASE
+应该是显示为 <NEWEST_KERNEL_RELEASE>
 
 uname -r
 
@@ -40,3 +41,4 @@ uname -r
 
 
 # 网络需求
+
