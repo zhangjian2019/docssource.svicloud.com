@@ -15,8 +15,10 @@ Ubuntu 升级内核（如最新，可跳过）：
 apt-get update
 
 apt-cache search linux-image-extra
+```
 
 **安装最新的内核**
+```bash
 
 apt-get install linux-image-extra-<NEWEST_KERNEL_RELEASE>
 
@@ -32,8 +34,9 @@ reboot
 **查看一下目前的内核版本**
 
 应该是显示为 <NEWEST_KERNEL_RELEASE>
-
+```bash
 uname -r
+```
 
 **当前内核为：**
 
