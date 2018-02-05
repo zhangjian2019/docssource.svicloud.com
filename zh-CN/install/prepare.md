@@ -21,7 +21,7 @@ sysctl -p
 验证lsmod | grep bbr
 ```
 
-# 所有服务器设置外部 DNS
+# 所有服务器设置外部 DNS(重要)
 ```bash
 # stop and disable the local dns generator
 systemctl disable systemd-resolved.service
