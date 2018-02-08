@@ -1,3 +1,115 @@
 ---
 name: Dockerfile
 ---
+**登录Rancher及配置**
+
+http://192.168.10.230:8080
+
+在环境管理--cattle编辑---模板Cattle中
+
+Networking中禁用Rancher ipsec，把Rancher VXLAN启用
+
+添加环境：
+
+环境管理-添加环境
+
+添加环境成功后，即可查看基础设施：
+
+应用-基础设施，如下图：
+
+![image](https://note.youdao.com/yws/api/personal/file/CB5A48AF2C5747EE82AB186735DBDD48?method=download&shareKey=d7f717379056b5e3e0932a2810a144c6)
+
+**系统管理-系统设置-**
+
+名称任意取
+
+地址：git@git.svicloud.com:svicloud/catalog-wisecloud.git 
+
+分支：master
+
+
+
+**应用商店-全部-管理**
+输入名称wisecloud
+地址git@git.svicloud.com:svicloud/catalog-wisecloud.git  保存
+
+应用商店就会出来wiseckoud：
+
+![image](https://note.youdao.com/yws/api/personal/file/0127C2072B854988A5508E0B14DB625F?method=download&shareKey=b0a89c43b60073d3df2aae805a7a29fb)
+
+
+在sever端
+
+root@192-168-10-230:~# ssh-keygen 
+
+将秘钥拷到目录/root/.ssh下
+
+root@192-168-10-230:~# cd .ssh
+
+root@192-168-10-230:~/.ssh# ls
+
+id_rsa  id_rsa.pub  known_hosts
+
+root@192-168-10-230:~/.ssh# rm -rf 
+
+root@192-168-10-230:~/.ssh# 
+
+建立云平台与git应用商店的互信
+
+![image](https://note.youdao.com/yws/api/personal/file/431BFCB09E7D4769886E3A5650069969?method=download&shareKey=e0e32bd3f83d71b51d7376488c416520)
+
+root@59af88b246de:~/.ssh# chmod 600 id_rsa 
+
+![image](https://note.youdao.com/yws/api/personal/file/2057107302574D70A8B981DCE11E1CA7?method=download&shareKey=a0fbd48e3b9c10c7d09ebf672b448a01)
+
+**添加主机及标签**
+
+基础架构-主机-添加主机
+
+执行第5步：将下列脚本拷贝到每一台主机上运行以注册 Rancher:
+
+每台主机上点编辑-添加标签（参考如下）：
+
+1：vslb=true nfs=true
+
+2：authcenter=true edge=true vslb=true fastdfs=true pg2=true pg1=true pg3=true
+
+3：edge=true web=true fixed=true pg4=true pg6=true pg5=true
+
+添加主机后，基础设施中healthcheck等启动异常，需删除以前环境的残留数据（对切换了环境的情况下）
+
+```bash
+docker stop $(docker ps |awk '{print $1}')
+
+docker rm $(docker ps -a |awk '{print $1}')
+```
+
+![image](https://note.youdao.com/yws/api/personal/file/FE64D72163F0437381B90B5DC95E4C8B?method=download&shareKey=0c4537f237049b562a8b3751a290cb1c)
+
+添加成功后：
+
+![image](https://note.youdao.com/yws/api/personal/file/F29EC923B75742D7AA14B2FF62B75FFD?method=download&shareKey=75f56cc0cafd7c67cd98b533f6037b60)
+
+
+**添加应用**
+
+首先添加数据库pg和redis：
+
+在有pg标签的机器上创建目录mkdir -p /data/pgdata
+
+应用-用户-从应用商店添加 ，搜postgres，
+
+![image](https://note.youdao.com/yws/api/personal/file/181A0C72FB9C4F298D8404F603D431A0?method=download&shareKey=af218aaf6875472582625657f18ace2d)
+
+
+点查看详情，启动
+
+启动后在/data/pgdata目录下生成pg*文件，（*为1-6）
+
+修改配置文件pg*/postgresql.conf ，（*为1-6）
+
+port = 5432*，（*为1-6）
+
+安装成功pg和redis后：
+
+![image](https://note.youdao.com/yws/api/personal/file/DBE316AF1B40485DAEB1677C1F5E00E8?method=download&shareKey=54f23454ff7f756b9bbcd5d18fd2dab8)
