@@ -2,10 +2,32 @@
 name: FAQ
 ---
 
-# 关于视维云平台
 
-目前网络上已经有多款非常棒的 Web 文档工具，但是观察了
 
-# 云启
 
-这里是云启的简介
+</br></br>
+
+<center>
+  <font size=30pt> FAQ</font> 
+</center>
+
+<html>
+<!--在这里插入内容-->
+</html>
+
+
+
+</br></br>
+
+
+
+</br></br>
+
+
+
+<center>
+
+
+</center>
+
+</br></br></br></br>
