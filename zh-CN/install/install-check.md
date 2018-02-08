@@ -23,6 +23,7 @@ docker start rancher-server
 ![image](https://note.youdao.com/yws/api/personal/file/B941815143204B808650F1E109F120BD?method=download&shareKey=036dfdbe8ed1acc6503ea7bfaa8f1fa3)
 
 查看：docker ps
+
 ![image](https://note.youdao.com/yws/api/personal/file/D6E6F9AFD572442EB2600E9D67A22F48?method=download&shareKey=7d086c231e268c428ac0abd27c5d4ad1)
 
 
