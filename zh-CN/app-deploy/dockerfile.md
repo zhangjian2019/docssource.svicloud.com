@@ -129,3 +129,18 @@ port = 5432*，（*为1-6）
 安装成功pg和redis后：
 
 ![image](https://note.youdao.com/yws/api/personal/file/DBE316AF1B40485DAEB1677C1F5E00E8?method=download&shareKey=54f23454ff7f756b9bbcd5d18fd2dab8)
+
+**添加应用**
+
+应用商店-wisecloud，选中aaa点查看详情--启动
+
+安装完成后，查看所在的机器ip，然后在该机器查看images：
+
+执行命令docker images
+
+![image](https://note.youdao.com/yws/api/personal/file/55A46F8B29A743AA8865D8FBFB140C8A?method=download&shareKey=046950b0bce70cdd60c40036f7e020da)
+
+查看添加的应用aaa：
+
+![image](https://note.youdao.com/yws/api/personal/file/0BC5C3B58C1D4A93891CF8A425BF7872?method=download&shareKey=0509b6fbf6668b3b73932ef64e846d19)
+
