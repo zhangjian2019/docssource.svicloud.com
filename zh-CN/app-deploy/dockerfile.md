@@ -30,6 +30,7 @@ Networking中禁用Rancher ipsec，把Rancher VXLAN启用
 
 
 **应用商店-全部-管理**
+
 输入名称：wisecloud
 
 地址：git@git.svicloud.com:svicloud/catalog-wisecloud.git  保存
