@@ -19,9 +19,9 @@ Networking中禁用Rancher ipsec，把Rancher VXLAN启用
 
 ![image](https://note.youdao.com/yws/api/personal/file/CB5A48AF2C5747EE82AB186735DBDD48?method=download&shareKey=d7f717379056b5e3e0932a2810a144c6)
 
-**系统管理-系统设置-**
+**系统管理-系统设置-添加应用商店**
 
-名称任意取
+名称：wisecloud
 
 地址：git@git.svicloud.com:svicloud/catalog-wisecloud.git 
 
@@ -30,8 +30,9 @@ Networking中禁用Rancher ipsec，把Rancher VXLAN启用
 
 
 **应用商店-全部-管理**
-输入名称wisecloud
-地址git@git.svicloud.com:svicloud/catalog-wisecloud.git  保存
+输入名称：wisecloud
+
+地址：git@git.svicloud.com:svicloud/catalog-wisecloud.git  保存
 
 应用商店就会出来wiseckoud：
 
