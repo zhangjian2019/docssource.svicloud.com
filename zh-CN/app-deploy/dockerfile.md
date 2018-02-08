@@ -5,13 +5,25 @@ name: Dockerfile
 
 http://192.168.10.230:8080
 
+
+**添加镜像库**
+
+在基础架构-镜像库-添加镜像库（custom）：
+
+地址：registry.svicloud.com
+
+用户名：admin
+
+密码：Gocm5]WeqaSufg
+
+
 在环境管理--cattle编辑---模板Cattle中
 
 Networking中禁用Rancher ipsec，把Rancher VXLAN启用
 
-添加环境：
+**添加环境**
 
-环境管理-添加环境
+在环境管理-添加环境
 
 添加环境成功后，即可查看基础设施：
 
@@ -19,7 +31,9 @@ Networking中禁用Rancher ipsec，把Rancher VXLAN启用
 
 ![image](https://note.youdao.com/yws/api/personal/file/CB5A48AF2C5747EE82AB186735DBDD48?method=download&shareKey=d7f717379056b5e3e0932a2810a144c6)
 
-**系统管理-系统设置-添加应用商店**
+**添加应用商店**
+
+在系统管理-系统设置-中点添加应用商店
 
 名称：wisecloud
 
