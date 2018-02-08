@@ -107,7 +107,7 @@ docker rm $(docker ps -a |awk '{print $1}')
 ![image](https://note.youdao.com/yws/api/personal/file/F29EC923B75742D7AA14B2FF62B75FFD?method=download&shareKey=75f56cc0cafd7c67cd98b533f6037b60)
 
 
-**添加应用**
+**添加数据库**
 
 首先添加数据库pg和redis：
 
