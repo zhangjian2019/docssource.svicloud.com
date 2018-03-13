@@ -10,11 +10,11 @@ http://192.168.10.230:8080
 
 在基础架构-镜像库-添加镜像库（custom）：
 
-地址：registry.svicloud.com
+地址：registry.sviyun.com
 
 用户名：admin
 
-密码：Gocm5]WeqaSufg
+密码：**********
 
 
 在环境管理--cattle编辑---模板Cattle中
