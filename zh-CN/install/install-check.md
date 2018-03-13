@@ -20,7 +20,6 @@ nameserver 114.114.114.114
 ```bash
 docker start rancher-server
 ```
-![image](https://note.youdao.com/yws/api/personal/file/B941815143204B808650F1E109F120BD?method=download&shareKey=036dfdbe8ed1acc6503ea7bfaa8f1fa3)
 
 查看：docker ps
 
