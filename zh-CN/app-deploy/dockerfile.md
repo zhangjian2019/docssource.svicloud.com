@@ -120,11 +120,8 @@ docker rm $(docker ps -a |awk '{print $1}')
 
 点查看详情，启动
 
-启动后在/data/pgdata目录下生成pg*文件，（*为1-6）
+启动后在/data/pgdata目录下生成pg*文件夹，（*为1-6）
 
-修改配置文件pg*/postgresql.conf ，（*为1-6）
-
-port = 5432*，（*为1-6）
 
 安装成功pg和redis后：
 
