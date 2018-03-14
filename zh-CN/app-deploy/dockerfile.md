@@ -25,11 +25,27 @@ Networking中禁用Rancher ipsec，把Rancher VXLAN启用
 
 在环境管理-添加环境
 
-添加环境成功后，即可查看基础设施：
+添加环境成功后，即可查看基础设施
 
-应用-基础设施，如下图：
+添加应用route53：
+
+AWS_ACCESS_KEY: AKIAITPARJW7F4MWKSEA
+
+AWS_SECRET_KEY: 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
+
+NAME_TEMPLATE: %{{service_name}}.%{{stack_name}}.%{{environment_name}}
+
+ROOT_DOMAIN：svi.pub
+
+ROUTE53_MAX_RETRIES: 3
+
+ROUTE53_ZONE_ID: Z2JG7XAAL9WE8F
+
+点应用-基础设施，如下图：
 
 ![image](https://note.youdao.com/yws/api/personal/file/CB5A48AF2C5747EE82AB186735DBDD48?method=download&shareKey=d7f717379056b5e3e0932a2810a144c6)
+
+
 
 **添加应用商店**
 
@@ -42,14 +58,7 @@ Networking中禁用Rancher ipsec，把Rancher VXLAN启用
 分支：master
 
 
-
-**应用商店-全部-管理**
-
-输入名称：wisecloud
-
-地址：git@git.svicloud.com:svicloud/catalog-wisecloud.git  保存
-
-应用商店就会出来wiseckoud：
+应用商店就会出来wisecloud：
 
 ![image](https://note.youdao.com/yws/api/personal/file/0127C2072B854988A5508E0B14DB625F?method=download&shareKey=b0a89c43b60073d3df2aae805a7a29fb)
 
@@ -78,11 +87,18 @@ root@59af88b246de:~/.ssh# chmod 600 id_rsa
 
 ![image](https://note.youdao.com/yws/api/personal/file/2057107302574D70A8B981DCE11E1CA7?method=download&shareKey=a0fbd48e3b9c10c7d09ebf672b448a01)
 
-**添加主机及标签**
+**添加主机**
 
 基础架构-主机-添加主机
 
-执行第5步：将下列脚本拷贝到每一台主机上运行以注册 Rancher:
+点击页面中的第5步右边的复制按钮：
+
+
+Xshell登录主机，在每台主机中执行拷贝的语句
+
+应用-基础设施，（此时基础设施状态为正常active）：
+
+**添加标签**
 
 每台主机上点编辑-添加标签（参考如下）：
 
@@ -111,20 +127,14 @@ docker rm $(docker ps -a |awk '{print $1}')
 
 首先添加数据库pg和redis：
 
-在有pg标签的机器上创建目录mkdir -p /data/pgdata
-
-应用-用户-从应用商店添加 ，搜postgres，
+应用-用户-从应用商店添加 ，搜postgres或redis，
 
 ![image](https://note.youdao.com/yws/api/personal/file/181A0C72FB9C4F298D8404F603D431A0?method=download&shareKey=af218aaf6875472582625657f18ace2d)
 
 
 点查看详情，启动
 
-启动后在/data/pgdata目录下生成pg*文件，（*为1-6）
-
-修改配置文件pg*/postgresql.conf ，（*为1-6）
-
-port = 5432*，（*为1-6）
+启动后自动在/data/pgdata目录下生成pg*的文件夹，（*为1-6）
 
 安装成功pg和redis后：
 
